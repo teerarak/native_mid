@@ -1,0 +1,11 @@
+<StackLayout>
+        <SearchBar hint="DISTRICT or CHANGWAT..." [text]="searchPhrase" (textChange)="onSubmit($event)" color="white" textFieldBackgroundColor="red" textFieldHintColor="white"></SearchBar>
+        <ListView [items]="myItems">
+                <ng-template let-item="item" let-i="index">
+                    <StackLayout (tap)="eiei(i)">
+                        <Label class="h3" [text]='"[" + item.NO +"] ENG_DIST: " + item.ENG_DIST'></Label>
+                        <Label class="h3" [text]='" ENG_CHANG: " + item.ENG_CHANG'></Label>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
+</StackLayout>
