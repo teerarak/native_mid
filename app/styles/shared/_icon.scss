@@ -1,0 +1,29 @@
+.mdi {
+  font-family: "Material Icons", "MaterialIcons-Regular";
+}
+.icon-badge-m{
+  display: inline-block;
+  width: 64;
+  height: 64;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center right ;
+  background-color: gray;
+  font-size:40;
+  color:white;
+  text-align: center;
+}
+
+.icon-badge-s{
+  display: inline-block;
+  width: 40;
+  height: 40;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center right ;
+  background-color: gray;
+  font-size:24;
+  color:white;
+  text-align: center;
+  verticalAlignment:center;
+}

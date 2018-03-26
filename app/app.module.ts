@@ -14,6 +14,7 @@ import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { HighwayComponent } from "./highway/htgway.component";
 import { HigwayService } from "./highway/highway.service";
 import { ShowComponent } from "./show/show.component";
+import { TNSFontIconModule } from 'nativescript-ng2-fonticon';
 
 @NgModule({
     bootstrap: [
@@ -23,7 +24,10 @@ import { ShowComponent } from "./show/show.component";
         NativeScriptModule,
         NativeScriptHttpModule,
         NativeScriptFormsModule,
-        AppRoutingModule
+        AppRoutingModule,
+        TNSFontIconModule.forRoot({
+            'mdi': 'material-design-icons.css'
+        })
     ],
     declarations: [
         AppComponent,

@@ -8,8 +8,8 @@ import { Router } from "@angular/router";
     moduleId: module.id
 })
 export class HighwayComponent implements OnInit {
-    highway = []
-    myItems = []
+    highway: any = []
+    myItems: any = []
     constructor (
         private  HigwayService: HigwayService,
         private router: Router
@@ -42,9 +42,18 @@ export class HighwayComponent implements OnInit {
                     this.myItems.push(this.highway[i]);
                 }
             }
+        } else {
+            this.myItems = this.highway
         }
     }
     eiei (index) {
         console.log(index)
+    }
+    total(data){
+        return this.getFormat(data.HVTOT + data.VEH_T + data.VEH1_T + data.VEH2_T + data.VEH3_T + data.VEH4_T + data.VEH5_T + data.VEH6_T + data.VEH7_T + data.VEH8_T + data.VEH9_T + data.VEH10_T + data.VEH11_T + data.VEH12_T + data.VEH13_T)
+    }
+    getFormat (data) {
+        var parts=data.toString().split(".");
+        return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (parts[1]);
     }
 }

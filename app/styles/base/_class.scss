@@ -1,0 +1,225 @@
+
+$spacingList: (
+  'z' 0,
+  'xs' 4,
+  's' 8,
+  'sm' 12,
+  'm' 16,
+  'ml' 20,
+  'l' 24,
+  'xl' 32,
+  'xxl' 40,
+  'xxxl' 48,
+  'xxxxl' 56,
+  'xxxxxl' 64,
+  );  
+  
+  $textsizeList: (
+  'xxs' 4,
+  'xs' 8,
+  'xss' 12,
+  's' 16,
+  'sm' 20,
+  'm' 24,
+  'ml' 32,
+  'l' 40,
+  'xl' 48,
+  'xxl' 56,
+  'xxxl' 64,
+  'xxxxl' 72,
+  'xxxxxl' 80,
+  );  
+
+@mixin cssbase ($prefix) {
+  @each $spacing in $spacingList
+  {
+  $spacingName:  nth($spacing , 1);
+  $spacingSize:  nth($spacing , 2);
+    /*==========  margin  ==========*/
+    #{$prefix}.ma#{$spacingName} {margin: #{$spacingSize};}
+    #{$prefix}.mt#{$spacingName} {margin-top: #{$spacingSize};}
+    #{$prefix}.mr#{$spacingName} {margin-right: #{$spacingSize};}
+    #{$prefix}.mb#{$spacingName} {margin-bottom: #{$spacingSize};}
+    #{$prefix}.ml#{$spacingName} {margin-left: #{$spacingSize};}
+
+    /*==========  padding  ==========*/
+    #{$prefix}.pa#{$spacingName} {padding: #{$spacingSize};}
+    #{$prefix}.pt#{$spacingName} {padding-top: #{$spacingSize};}
+    #{$prefix}.pr#{$spacingName} {padding-right: #{$spacingSize};}
+    #{$prefix}.pb#{$spacingName} {padding-bottom: #{$spacingSize};}
+    #{$prefix}.pl#{$spacingName} {padding-left: #{$spacingSize};}
+  }
+  @each $textsize in $textsizeList {
+  $textsizeName:  nth($textsize , 1);
+  $textsizeSize:  nth($textsize , 2);
+    /*==========  font  ==========*/
+    #{$prefix}.text-#{$textsizeName} {font-size: #{$textsizeSize};}
+  }
+}
+
+@include cssbase('');
+
+@mixin overwritespacing {
+  @include cssbase('&');
+}
+
+@mixin overwritetextsize {
+  @include cssbase('&');
+}
+
+///text///
+
+.textblack{
+  color:black;
+}
+.textred{
+  color:red;
+}
+.textbluepjm{
+  color:#0095cf;
+}
+.textgreenot{
+  color:#49a990;
+}
+.textgray{
+  color:gray;
+}
+.textlightgray{
+  color:lightgray;
+}
+.textwhite{
+  color:white;
+}
+.textblue{
+  color:#0095cf;
+}
+.textbluetrans{
+  color:#0095cf;
+  opacity: 0.5;
+}
+.textgreen{
+  color:green;
+}
+.textyellow{
+  color:yellow;
+}
+.textorange{
+  color:orange;
+}
+
+.text-bold{
+  font-weight: bold;
+}
+.text-right{
+  text-align: right;
+}
+
+
+/// bgcolor//
+.bgwhite{
+  background-color: white;
+}
+.bgblue{
+  background-color: #0095cf;
+}
+.bgred{
+  background-color: #db4437;
+}
+.bggreenot{
+  background-color:#49a990;
+}
+.bggreen{
+  background-color: #00a50c;
+}
+.bglightgray{
+  background-color: #efefef;
+}
+.bggray{
+  background-color: gray;
+}
+///Profile picture///
+
+.profile-picture-main{
+  display: inline-block;
+  width: 72;
+  height: 72;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center right ;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.profile-picture-sub{
+  display: inline-block;
+  width: 48;
+  height: 48;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center right ;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+//list//
+.underline-list{
+border-bottom-width: 0.5;
+border-color: gray;
+}
+
+.underline-list1{
+border-bottom-width: 1;
+border-color: gray;
+}
+
+.overline-list{
+border-top-width: 0.5;
+border-color: gray;
+}
+
+
+.cardStyle {
+    background-color: red;
+    color: #fff;
+}
+
+.tabview {
+    tab-text-color: rgba(255, 255, 255, 0.9);
+    tab-background-color: #0086ba;
+    selected-tab-text-color: white;
+    android-selected-tab-highlight-color: white;
+}
+
+//setting//
+.setting-option-box{
+  border-width: 1;
+  border-color: gray;
+}
+
+.setting-option-box-blue{
+  border-width: 1;
+  border-color: #0095cf;
+}
+
+//picture slide//
+.arrow {
+    color: white;
+    opacity: 0.8;
+    background-color:#0095cf ;
+    font-size: 20;
+    padding: 8;
+    height:48;
+    margin-top:40;
+    margin-bottom:120;
+}
+.slider-title {
+  width:44;
+  font-size: 16;
+  font-weight: bold;
+  background-color:rgba(0, 149, 207, 0.7);
+  filter:alpha(opacity=80); /* For IE8 and earlier */
+  padding: 2;
+  text-align: center;
+  vertical-align: top;
+  color: white;
+  margin-left:360;
+  margin-top:4;
+}

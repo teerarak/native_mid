@@ -1,11 +1,42 @@
+<ActionBar>
+    <GridLayout class="prsm textblue text-m">
+        <Label horizontalAlignment="center"text="ข้อมูลจราจร"></Label>
+    </GridLayout>
+</ActionBar>
 <StackLayout>
-        <SearchBar hint="DISTRICT or CHANGWAT..." [text]="searchPhrase" (textChange)="onSubmit($event)" color="white" textFieldBackgroundColor="red" textFieldHintColor="white"></SearchBar>
+        <SearchBar hint="DISTRICT or CHANGWAT..." [text]="searchPhrase" (textChange)="onSubmit($event)"></SearchBar>
         <ListView [items]="myItems">
                 <ng-template let-item="item" let-i="index">
-                    <StackLayout (tap)="eiei(i)">
-                        <Label class="h3" [text]='"[" + item.NO +"] ENG_DIST: " + item.ENG_DIST'></Label>
-                        <Label class="h3" [text]='" ENG_CHANG: " + item.ENG_CHANG'></Label>
-                    </StackLayout>
+                    <GridLayout columns="*,*,80" orientation="horizontal" verticalAlignment="top">
+
+                        <StackLayout colspan="2" orientation="vertical">
+                            <!-- ชื่อตอน -->
+                            <StackLayout class="pbxs" orientation="horizontal"> 
+                                <!-- <Label text="Project : "> </Label> -->
+                                <Label horizontalAlignment="center" class="mdi text-sm" [text]="'mdi-domain' | fonticon"></Label>
+                                <Label  [text]="' ' +item.NAMEE"> </Label>
+                            </StackLayout>
+                            <!-- แขวงทางหลวง -->
+                            <StackLayout class="pbxs" orientation="horizontal">
+                                <!-- <Label text="Supplier : "> </Label> -->
+                                <Label horizontalAlignment="center" class="mdi text-sm" [text]="'mdi-store-mall-directory' | fonticon"></Label>
+                                <Label  textWrap="true" [text]="' ' +item.ENG_DIST "> </Label>
+                            </StackLayout>
+                            <!-- ปริมาณรถ -->
+                            <StackLayout class="pbxs" orientation="horizontal">
+                                <!-- <Label text="Amount : "> </Label> -->
+                                <Label horizontalAlignment="center" class="mdi text-sm" [text]="'mdi-monetization-on' | fonticon"></Label>
+                                <Label  textWrap="true" [text]="' ' + total(item)"> </Label>
+                            </StackLayout>
+                        </StackLayout>
+
+
+                        <StackLayout orientation="horizontal" horizontalAlignment="right" verticalAlignment="top" col="2">
+                                <StackLayout class="button-circle-red-s text-xss" orientation="horizontal" horizontalAlignment="center">
+                                    <Label class="textred" [text]=item.CHANGWAT> </Label>
+                                </StackLayout>
+                        </StackLayout>
+                    </GridLayout>
                 </ng-template>
             </ListView>
 </StackLayout>

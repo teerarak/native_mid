@@ -1,0 +1,55 @@
+@import './../base/theme';
+
+.button-blue {
+    background-color: $actionbar-color;
+    color: white;
+}
+.button-greenot {
+    background-color: #49a990;
+    color: white;
+}
+.button-circle-red {
+    display:inline-block;
+    width:90;
+    height: 25;
+    border-width: 1;
+    border-radius: 40;
+    border-color:red;
+    background: transparent;
+    text-align: center;
+}
+.button-circle-red-s {
+    display:inline-block;
+    width:80;
+    height: 20;
+    border-width: 1;
+    border-radius: 40;
+    border-color:red;
+    // background: transparent;
+    text-align: center;
+}
+
+.button-circle-document-blue {
+    display:inline-block;
+    width:90;
+    height: 25;
+    border-width: 1;
+    border-radius: 40;
+    border-color:#0095cf;
+    // background: transparent;
+    text-align: center;
+    color:#0095cf;
+}
+
+
+.button-circle-allocate-blue {
+    display:inline-block;
+    width:75;
+    height: 25;
+    border-width: 1;
+    border-radius: 40;
+    border-color:#0095cf;
+    // background: transparent;
+    text-align: center;
+    color:#0095cf;
+}
