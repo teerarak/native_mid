@@ -1,0 +1,42 @@
+<ActionBar class="actionbar">
+    <GridLayout class="prsm textwhite text-m">
+        <Label horizontalAlignment="left" class="mdi pts text-m" [text]="'mdi-arrow-back' | fonticon" (tap)='goBack()'></Label>
+        <Label horizontalAlignment="center" class="ptxs text-m" text="Filter"></Label>
+
+        <!-- <stacklayout horizontalAlignment="right" orientation="horizontal" class="pts text-m">
+            <Label class="prm" text="OK" (tap)="submit()"></Label>
+        </stacklayout> -->
+        <stacklayout horizontalAlignment="right" orientation="horizontal" class="pts text-m">
+            <Label class="mdi" [text]="'mdi-check' | fonticon" (tap)='submit()'></Label>
+        </stacklayout>
+    </GridLayout>
+</ActionBar>
+<StackLayout>
+
+    <StackLayout class="maxl" horizontalAlignment="center">
+
+        <StackLayout class="pbl">
+            <Label class="textgray text-s" text="Province"> </Label>
+            <StackLayout orientation="horizontal" >
+                    <!-- <Label horizontalAlignment="left" class="mdi pts text-m" [text]="'mdi-arrow-back' | fonticon"></Label> -->
+                <TextField width="90%" class="pts textbluepjm text-s" [text]="province" editable="false" textWrap="true" (tap)="selectProvince()"></TextField>
+            </StackLayout>
+        </StackLayout>
+
+        <!-- <StackLayout  class="pbl">
+            <Label class="textgray text-s" text="Sort by"> </Label>
+            <StackLayout orientation="horizontal">
+                    <TextField width="90%" class="pts textbluepjm text-s" [text]="sortName" editable="false" textWrap="true" (tap)="sort()"></TextField>
+            </StackLayout>
+        </StackLayout> -->
+        <!-- <StackLayout>
+            <ListView row="1" [items]="traffic" class="list-group" (itemTap)="sortByfunc($event)">
+                <ng-template let-sort="item" let-index="index">
+                    <StackLayout class="pasm ptm pbm" >
+                        <Label [text]="sort.ENG_CHANG" class="textgray text-s"></Label>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
+        </StackLayout> -->
+    </StackLayout>
+</StackLayout>

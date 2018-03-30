@@ -1,0 +1,25 @@
+<ActionBar class="actionbar">
+    <GridLayout class="prsm textwhite text-m">
+        <Label horizontalAlignment="left" class="mdi pts text-m" [text]="'mdi-arrow-back' | fonticon" (tap)='goBack()'></Label>
+        <Label horizontalAlignment="center" class="ptxs text-m" text="Province"></Label>
+
+        <stacklayout horizontalAlignment="right" orientation="horizontal" class="pts text-m">
+            <!-- <Label class="prm" text="OK" (tap)="submit()"></Label> -->
+        </stacklayout>
+    </GridLayout>
+</ActionBar>
+<StackLayout>
+<StackLayout>
+    <SearchBar row="0" hint="Search" (textChange)="onTextChange($event)" (loaded)="sBLoaded($event)" ></SearchBar>
+</StackLayout>
+<StackLayout>
+    <ListView row="1" [items]="myProvinces" class="list-group" (itemTap)="selectProvince($event)">
+        <ng-template let-province="item" let-index="index">
+            <StackLayout class="pam ptl pbl pll" >
+                <Label [text]="province.name" class="textgray text-s"></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>
+</StackLayout>
+

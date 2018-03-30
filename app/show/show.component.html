@@ -1,10 +1,21 @@
-<StackLayout>
-    <Label class="h4" [text]="'ENG_DIST: '+data.ENG_DIST"></Label>
-    <Label class="h4" [text]="'ENG_CHANG: '+data.ENG_CHANG"></Label>
-    <Label class="h4" [text]="'CHANGWAT: '+data.CHANGWAT"></Label>
-    <Label class="h4" [text]="'VEH1_T: '+data.VEH1_T"></Label>
+<ActionBar class="actionbar">
+    <GridLayout class="prsm textwhite text-m">
+        <Label horizontalAlignment="left" class="mdi pts text-m" [text]="'mdi-arrow-back' | fonticon" (tap)='goBack()'></Label>
+        <Label horizontalAlignment="center"text="Detail"></Label>
+    </GridLayout>
+</ActionBar>
+<StackLayout class="mas">
+    <Label class="text-sm" textwrap="true" [text]="'หมายเลขทางหลวง: '+data.ROUTE"></Label>
+    <Label class="text-sm" textwrap="true" [text]="'ชื่อตอน: '+data.NAMET"></Label>
+    <Label class="text-sm" textwrap="true" [text]="'แขวงทางหลาง: '+data.DISTRICT"></Label>
+    <Label class="text-sm" textwrap="true" [text]="'จังหวัด: '+data.CHANGWAT"></Label>
+    <!-- <Label class="h4" [text]="'VEH1_T: '+data.VEH1_T"></Label>
     <Label class="h4" [text]="'VEH2_T: '+data.VEH2_T"></Label>
     <Label class="h4" [text]="'VEH3_T: '+data.VEH3_T"></Label>
-    <Label class="h4" [text]="'VEH4_T: '+data.VEH4_T"></Label>
-    <Label class="h4" [text]="'VEH_Total: '+ sum"></Label>
+    <Label class="h4" [text]="'VEH4_T: '+data.VEH4_T"></Label> -->
+    <Label class="text-sm textred" textwrap="true" [text]="'รวม: '+ total(data)"></Label>
+    <ScrollView orientation="horizontal" >
+        <Image [src]="'https://chart.googleapis.com/chart?cht=p&chs=580x300&chd=t:'+ data.VEH1_T +','+ data.VEH2_T +','+ data.VEH3_T +','+ data.VEH4_T +','+ data.VEH5_T +','+ data.VEH6_T +','+ data.VEH7_T +','+ data.VEH8_T +','+ data.VEH9_T +','+ data.VEH10_T +','+ data.VEH11_T +','+ data.VEH12_T +','+ data.VEH13_T +','+ data.HVTOT +'&chl=รถจักรยาน2ล้อ/3ล้อ|3ล้อเครื่องและจักรยานยนต์|รถยนต์นั่งไม่เกิน7คน|รถยนต์นั่งเกิน7คน|รถโดยสารขนาดเล็ก|รถโดยสารขนาดกลาง|รถโดยสารขนาดใหญ่|รถบรรทุกขนาดเล็ก|รถบรรทุกขนาด2เพลา(6ล้อ)|รถบรรทุกขนาด3เพลา(10ล้อ)|รถพ่วง|รถกึ่งพ่วง|รถเครื่องจักรและรถดัดแปลง|รถบรรทุก'"></Image>
+    </ScrollView>
+
 </StackLayout>

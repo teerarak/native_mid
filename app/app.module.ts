@@ -15,6 +15,10 @@ import { HighwayComponent } from "./highway/htgway.component";
 import { HigwayService } from "./highway/highway.service";
 import { ShowComponent } from "./show/show.component";
 import { TNSFontIconModule } from 'nativescript-ng2-fonticon';
+import { FilterComponent } from "./filter/filter.component";
+import { BackendService } from "./backend.service";
+import { ProvinceComponent } from "./filter/province/province.component";
+import { SortComponent } from "./filter/sort/sort.component";
 
 @NgModule({
     bootstrap: [
@@ -32,10 +36,17 @@ import { TNSFontIconModule } from 'nativescript-ng2-fonticon';
     declarations: [
         AppComponent,
         HighwayComponent,
-        ShowComponent
+        ShowComponent,
+        FilterComponent,
+        ProvinceComponent,
+        SortComponent
+    ],
+    entryComponents: [
+        SortComponent
     ],
     providers: [
-        HigwayService
+        HigwayService,
+        BackendService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

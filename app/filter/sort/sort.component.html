@@ -1,0 +1,9 @@
+<StackLayout>
+    <ListView row="1" [items]="sortBy" class="list-group" (itemTap)="sortByfunc($event)">
+        <ng-template let-sort="item" let-index="index">
+            <StackLayout class="pasm ptm pbm" >
+                <Label [text]="sort" class="textgray text-s"></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>
